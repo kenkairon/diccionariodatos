@@ -1,0 +1,1136 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ejercicios de clases</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+</head>
+<body class="container">
+
+<!-- Busqueda de Pacientes-->
+<hr>
+<div class="container row">
+    <table class="table table boredered">
+        <table id='accidente'>
+        <caption>Tabla : accidente</caption>
+        <tr><td colspan='11'></td></tr>
+        <tr>
+            <th>Column name</th>
+            <th>DataType</th>
+            <th><abbr title='Primary Key'>PK</abbr></th>
+            <th><abbr title='Not Null'>NN</abbr></th>
+            <th><abbr title='Unique'>UQ</abbr></th>
+            <th><abbr title='Binary'>BIN</abbr></th>
+            <th><abbr title='Unsigned'>UN</abbr></th>
+            <th><abbr title='Zero Fill'>ZF</abbr></th>
+            <th><abbr title='Auto Increment'>AI</abbr></th>
+            <th>Default</th>
+            <th>Comment</th>
+        </tr>
+        <tr>
+            <td>accidenteid</td>
+            <td>INT</td>
+            <td>&#10004;</td>
+            <td>&#10004;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&#10004;</td>
+            <td></td>
+            <td>Almacena clave primaria <b><u>accidenteid</u></b> valor autoincrementable</td>
+        </tr>
+        <tr>
+            <td>dia</td>
+            <td>DATE</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class='attr'>&nbsp;</td>
+            <td>NULL</td>
+            <td>Almacena día del Accidente</td>
+        </tr>
+        <tr>
+            <td>hora</td>
+            <td>TIME</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class='attr'>&nbsp;</td>
+            <td>NULL</td>
+            <td>Almacena hora del accidente</td>
+        </tr>
+        <tr>
+            <td>lugar</td>
+            <td>VARCHAR(50)</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class='attr'>&nbsp;</td>
+            <td>NULL</td>
+            <td>Almacena lugar del accidente</td>
+        </tr>
+        <tr>
+            <td>origen</td>
+            <td>VARCHAR(100)</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class='attr'>&nbsp;</td>
+            <td>NULL</td>
+            <td>Almacena origen del accidente</td>
+        </tr>
+        <tr>
+            <td>consecuencia</td>
+            <td>VARCHAR(100)</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class='attr'>&nbsp;</td>
+            <td>NULL</td>
+            <td>Almacena consecuencias del accidente</td>
+        </tr>
+        <tr>
+            <td>Cliente_rutcliente</td>
+            <td>INT</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class='attr'>&nbsp;</td>
+            <td></td>
+            <td>Almacena <b><u>Cliente_rutcliente</u></b> <b>FK</b>  que es una clave foránea referente a la tabla <b>cliente</b> </td>
+        </tr>
+        <table id='administrativo'>
+        <caption>Tabla : administrativo</caption>
+        <tr><td colspan='11'></td></tr>
+        <tr>
+            <th>Column name</th>
+            <th>DataType</th>
+            <th><abbr title='Primary Key'>PK</abbr></th>
+            <th><abbr title='Not Null'>NN</abbr></th>
+            <th><abbr title='Unique'>UQ</abbr></th>
+            <th><abbr title='Binary'>BIN</abbr></th>
+            <th><abbr title='Unsigned'>UN</abbr></th>
+            <th><abbr title='Zero Fill'>ZF</abbr></th>
+            <th><abbr title='Auto Increment'>AI</abbr></th>
+            <th>Default</th>
+            <th>Comment</th>
+        </tr>
+        <tr>
+            <td>idadmin</td>
+            <td>INT</td>
+            <td>&#10004;</td>
+            <td>&#10004;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&#10004;</td>
+            <td></td>
+            <td>Almacena clave primaria <b><u>idadmin</u></b> valor autoincrementable</td>
+        </tr>
+        <tr>
+            <td>rutadmin</td>
+            <td>INT</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class='attr'>&nbsp;</td>
+            <td>NULL</td>
+            <td>Almacena el rut del administrativo</td>
+        </tr>
+        <tr>
+            <td>correoadmin</td>
+            <td>VARCHAR(100)</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class='attr'>&nbsp;</td>
+            <td>NULL</td>
+            <td>Almacena el correo electrónico del administrativo</td>
+        </tr>
+        <tr>
+            <td>areaadmin</td>
+            <td>VARCHAR(50)</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class='attr'>&nbsp;</td>
+            <td>NULL</td>
+            <td>Almacena el área del Administrativo</td>
+        </tr>
+        <table id='asesoria'>
+        <caption>Tabla : asesoria</caption>
+        <tr><td colspan='11'></td></tr>
+        <tr>
+            <th>Column name</th>
+            <th>DataType</th>
+            <th><abbr title='Primary Key'>PK</abbr></th>
+            <th><abbr title='Not Null'>NN</abbr></th>
+            <th><abbr title='Unique'>UQ</abbr></th>
+            <th><abbr title='Binary'>BIN</abbr></th>
+            <th><abbr title='Unsigned'>UN</abbr></th>
+            <th><abbr title='Zero Fill'>ZF</abbr></th>
+            <th><abbr title='Auto Increment'>AI</abbr></th>
+            <th>Default</th>
+            <th>Comment</th>
+        </tr>
+        <tr>
+            <td>id_asesoria</td>
+            <td>INT</td>
+            <td>&#10004;</td>
+            <td>&#10004;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&#10004;</td>
+            <td></td>
+            <td>Almacena <b><u>id_asesoria</u></b> que es clave primaria autoincrementable</td>
+        </tr>
+        <tr>
+            <td>fecha_asesoria</td>
+            <td>DATE</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class='attr'>&nbsp;</td>
+            <td>NULL</td>
+            <td>Almacena la fecha de la asesoría</td>
+        </tr>
+        <tr>
+            <td>motivo_asesoria</td>
+            <td>VARCHAR(100)</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class='attr'>&nbsp;</td>
+            <td>NULL</td>
+            <td>Almacena el motivo de la asesoría</td>
+        </tr>
+        <tr>
+            <td>cliente_rutcliente</td>
+            <td>INT</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class='attr'>&nbsp;</td>
+            <td></td>
+            <td>Almacena la clave foránea <b><u>cliente_rutcliente</u></b> <b>FK</b>  referente a la tabla <b>cliente</b></td>
+        </tr>
+        <tr>
+            <td>idprofesional</td>
+            <td>INT</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class='attr'>&nbsp;</td>
+            <td></td>
+            <td>Almacena <b><u>idprofesional</u></b> <b>FK</b>  que es clave foránea referente a la tabla <b>profesional</b></td>
+        </tr>
+        <table id='asistente'>
+        <caption>Tabla : asistente</caption>
+        <tr><td colspan='11'></td></tr>
+        <tr>
+            <th>Column name</th>
+            <th>DataType</th>
+            <th><abbr title='Primary Key'>PK</abbr></th>
+            <th><abbr title='Not Null'>NN</abbr></th>
+            <th><abbr title='Unique'>UQ</abbr></th>
+            <th><abbr title='Binary'>BIN</abbr></th>
+            <th><abbr title='Unsigned'>UN</abbr></th>
+            <th><abbr title='Zero Fill'>ZF</abbr></th>
+            <th><abbr title='Auto Increment'>AI</abbr></th>
+            <th>Default</th>
+            <th>Comment</th>
+        </tr>
+        <tr>
+            <td>idasistente</td>
+            <td>INT</td>
+            <td>&#10004;</td>
+            <td>&#10004;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&#10004;</td>
+            <td>Almacena <b><u>idasistente</u></b> que es clave primaria autoincrementable</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>nombres</td>
+            <td>VARCHAR(100)</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class='attr'>&nbsp;</td>
+            <td>NULL</td>
+            <td>Almacena nombres de asistentes</td>
+        </tr>
+        <tr>
+            <td>edad</td>
+            <td>INT</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class='attr'>&nbsp;</td>
+            <td>NULL</td>
+            <td>Almacena edad de asistentes</td>
+        </tr>
+        <tr>
+            <td>telefono_asistente</td>
+            <td>VARCHAR(20)</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class='attr'>&nbsp;</td>
+            <td>NULL</td>
+            <td>Almacena teléfono de asistente</td>
+        </tr>
+        <tr>
+            <td>Capacitacion_idcapacitacion</td>
+            <td>INT</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class='attr'>&nbsp;</td>
+            <td></td>
+            <td>Almacena <b><u>Capacitacion_idcapacitacion</u></b> <b>FK</b>  que es clave foránea que hace referencia a la tabla <b>capacitación</b></td>
+        </tr>
+        <tr>
+            <td>correo_asistente</td>
+            <td>VARCHAR(50)</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class='attr'>&nbsp;</td>
+            <td>NULL</td>
+            <td>Almacena correo de asistente </td>
+        </tr>
+        <table id='capacitacion'>
+        <caption>Tabla : capacitacion</caption>
+        <tr><td colspan='11'></td></tr>
+        <tr>
+            <th>Column name</th>
+            <th>DataType</th>
+            <th><abbr title='Primary Key'>PK</abbr></th>
+            <th><abbr title='Not Null'>NN</abbr></th>
+            <th><abbr title='Unique'>UQ</abbr></th>
+            <th><abbr title='Binary'>BIN</abbr></th>
+            <th><abbr title='Unsigned'>UN</abbr></th>
+            <th><abbr title='Zero Fill'>ZF</abbr></th>
+            <th><abbr title='Auto Increment'>AI</abbr></th>
+            <th>Default</th>
+            <th>Comment</th>
+        </tr>
+        <tr>
+            <td>idcapacitacion</td>
+            <td>INT</td>
+            <td>&#10004;</td>
+            <td>&#10004;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&#10004;</td>
+            <td></td>
+            <td>Almacena <b><u>idcapacitacion</u></b> clave primaria autoincrementable</td>
+        </tr>
+        <tr>
+            <td>fecha</td>
+            <td>DATE</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class='attr'>&nbsp;</td>
+            <td>NULL</td>
+            <td>Almacena la fecha de la capacitación</td>
+        </tr>
+        <tr>
+            <td>hora</td>
+            <td>TIME</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class='attr'>&nbsp;</td>
+            <td>NULL</td>
+            <td>Almacena la hora de la capacitación</td>
+        </tr>
+        <tr>
+            <td>lugar</td>
+            <td>VARCHAR(50)</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class='attr'>&nbsp;</td>
+            <td>NULL</td>
+            <td>Almacena el lugar de la capacitación</td>
+        </tr>
+        <tr>
+            <td>duracion</td>
+            <td>INT</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class='attr'>&nbsp;</td>
+            <td>NULL</td>
+            <td>Almacena la duración de la capacitación</td>
+        </tr>
+        <tr>
+            <td>cantidadasistente</td>
+            <td>INT</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class='attr'>&nbsp;</td>
+            <td>NULL</td>
+            <td>Almacena la cantidad de asistente de la capacitación</td>
+        </tr>
+        <tr>
+            <td>Cliente_rutcliente</td>
+            <td>INT</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class='attr'>&nbsp;</td>
+            <td>NULL</td>
+            <td>Almacena <b><u>Capacitacion_idcapacitacion</u></b> <b>FK</b>  clave foránea que hace referencia a la tabla <b>capacitación</b></td>
+        </tr>
+        <table id='chequeo'>
+        <caption>Tabla : chequeo</caption>
+        <tr><td colspan='11'></td></tr>
+        <tr>
+            <th>Column name</th>
+            <th>DataType</th>
+            <th><abbr title='Primary Key'>PK</abbr></th>
+            <th><abbr title='Not Null'>NN</abbr></th>
+            <th><abbr title='Unique'>UQ</abbr></th>
+            <th><abbr title='Binary'>BIN</abbr></th>
+            <th><abbr title='Unsigned'>UN</abbr></th>
+            <th><abbr title='Zero Fill'>ZF</abbr></th>
+            <th><abbr title='Auto Increment'>AI</abbr></th>
+            <th>Default</th>
+            <th>Comment</th>
+        </tr>
+        <tr>
+            <td>idchequeo</td>
+            <td>INT</td>
+            <td>&#10004;</td>
+            <td>&#10004;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&#10004;</td>
+            <td></td>
+            <td>Almacena <b><u>idchequeo clave primaria autoincrementable<u></b></td>
+        </tr>
+        <tr>
+            <td>nombrechequeo</td>
+            <td>VARCHAR(100)</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class='attr'>&nbsp;</td>
+            <td>NULL</td>
+            <td>Almacena el nombre del chequeo</td>
+        </tr>
+        <tr>
+            <td>estado_chequeo</td>
+            <td>INT</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class='attr'>&nbsp;</td>
+            <td>NULL</td>
+            <td>Almacena el estado del chequeo</td>
+        </tr>
+        <tr>
+            <td>nombre_empresa</td>
+            <td>VARCHAR(45)</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class='attr'>&nbsp;</td>
+            <td>NULL</td>
+            <td>Almacena el nombre de la empresa que se le hace el chequeo</td>
+        </tr>
+        <tr>
+            <td>cliente_rutcliente</td>
+            <td>INT</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class='attr'>&nbsp;</td>
+            <td>NULL</td>
+            <td>Almacena <b><u>cliente_rutcliente</u></b> <b>FK</b>  que hace referencia a la tabla <b>cliente</b></td>
+        </tr>
+        <table id='cliente'>
+        <caption>Tabla : cliente</caption>
+        <tr><td colspan='11'></td></tr>
+        <tr>
+            <th>Column name</th>
+            <th>DataType</th>
+            <th><abbr title='Primary Key'>PK</abbr></th>
+            <th><abbr title='Not Null'>NN</abbr></th>
+            <th><abbr title='Unique'>UQ</abbr></th>
+            <th><abbr title='Binary'>BIN</abbr></th>
+            <th><abbr title='Unsigned'>UN</abbr></th>
+            <th><abbr title='Zero Fill'>ZF</abbr></th>
+            <th><abbr title='Auto Increment'>AI</abbr></th>
+            <th>Default</th>
+            <th>Comment</th>
+        </tr>
+        <tr>
+            <td>rutcliente</td>
+            <td>INT</td>
+            <td>&#10004;</td>
+            <td>&#10004;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class='attr'>&nbsp;</td>
+            <td></td>
+            <td>Almacena <b><u>rutcliente</u></b> que es clave primaria </td>
+        </tr>
+        <tr>
+            <td>nombres</td>
+            <td>VARCHAR(30)</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class='attr'>&nbsp;</td>
+            <td>NULL</td>
+            <td>Almacena los nombres del cliente</td>
+        </tr>
+        <tr>
+            <td>apellidos</td>
+            <td>VARCHAR(30)</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class='attr'>&nbsp;</td>
+            <td>NULL</td>
+            <td>Almacena el apellido del clientes</td>
+        </tr>
+        <tr>
+            <td>telefono</td>
+            <td>VARCHAR(20)</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class='attr'>&nbsp;</td>
+            <td>NULL</td>
+            <td>Almacena el teléfono del cliente</td>
+        </tr>
+        <tr>
+            <td>afp</td>
+            <td>VARCHAR(30)</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class='attr'>&nbsp;</td>
+            <td>NULL</td>
+            <td>Almacena el afp del cliente</td>
+        </tr>
+        <tr>
+            <td>sistemasalud</td>
+            <td>INT</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class='attr'>&nbsp;</td>
+            <td>NULL</td>
+            <td>Almacena el sistema de salud del cliente</td>
+        </tr>
+        <tr>
+            <td>direccion</td>
+            <td>VARCHAR(70)</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class='attr'>&nbsp;</td>
+            <td>NULL</td>
+            <td>Almacena la dirección del cliente</td>
+        </tr>
+        <tr>
+            <td>comuna</td>
+            <td>VARCHAR(50)</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class='attr'>&nbsp;</td>
+            <td>NULL</td>
+            <td>Almacena la comuna del cliente</td>
+        </tr>
+        <tr>
+            <td>edad</td>
+            <td>INT</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class='attr'>&nbsp;</td>
+            <td>NULL</td>
+            <td>Almacena la edad del cliente</td>
+        </tr>
+        <table id='mejoras'>
+        <caption>Tabla : mejoras</caption>
+        <tr><td colspan='11'></td></tr>
+        <tr>
+            <th>Column name</th>
+            <th>DataType</th>
+            <th><abbr title='Primary Key'>PK</abbr></th>
+            <th><abbr title='Not Null'>NN</abbr></th>
+            <th><abbr title='Unique'>UQ</abbr></th>
+            <th><abbr title='Binary'>BIN</abbr></th>
+            <th><abbr title='Unsigned'>UN</abbr></th>
+            <th><abbr title='Zero Fill'>ZF</abbr></th>
+            <th><abbr title='Auto Increment'>AI</abbr></th>
+            <th>Default</th>
+            <th>Comment</th>
+        </tr>
+        <tr>
+            <td>id_mejoras</td>
+            <td>INT</td>
+            <td>&#10004;</td>
+            <td>&#10004;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&#10004;</td>
+            <td></td>
+            <td>Almacena <b><u>id_mejoras</u></b> clave primaria autoincrementable</td>
+        </tr>
+        <tr>
+            <td>titulo_mejora</td>
+            <td>VARCHAR(100)</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class='attr'>&nbsp;</td>
+            <td>NULL</td>
+            <td>Almacena el titulo de la mejora</td>
+        </tr>
+        <tr>
+            <td>descripcion_mejora</td>
+            <td>VARCHAR(100)</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class='attr'>&nbsp;</td>
+            <td>NULL</td>
+            <td>Almacena la descripción de la mejora</td>
+        </tr>
+        <tr>
+            <td>id_asesoria</td>
+            <td>INT</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class='attr'>&nbsp;</td>
+            <td></td>
+            <td>Almacena <b><u>Capacitacion_idcapacitacion</u></b> <b>FK</b>  que hace referencia a la tabla <b>asesoria</b></td>
+        </tr>
+        <table id='pagos'>
+        <caption>Tabla : pagos</caption>
+        <tr><td colspan='11'></td></tr>
+        <tr>
+            <th>Column name</th>
+            <th>DataType</th>
+            <th><abbr title='Primary Key'>PK</abbr></th>
+            <th><abbr title='Not Null'>NN</abbr></th>
+            <th><abbr title='Unique'>UQ</abbr></th>
+            <th><abbr title='Binary'>BIN</abbr></th>
+            <th><abbr title='Unsigned'>UN</abbr></th>
+            <th><abbr title='Zero Fill'>ZF</abbr></th>
+            <th><abbr title='Auto Increment'>AI</abbr></th>
+            <th>Default</th>
+            <th>Comment</th>
+        </tr>
+        <tr>
+            <td>idpago</td>
+            <td>INT</td>
+            <td>&#10004;</td>
+            <td>&#10004;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&#10004;</td>
+            <td></td>
+            <td>Almacena <b><u>idpago</u></b>clave primaria autoincrementable</td>
+        </tr>
+        <tr>
+            <td>fechapago</td>
+            <td>DATE</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class='attr'>&nbsp;</td>
+            <td>NULL</td>
+            <td>Almacena la fecha de pago</td>
+        </tr>
+        <tr>
+            <td>monto</td>
+            <td>INT</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class='attr'>&nbsp;</td>
+            <td>NULL</td>
+            <td>Almacena el monto del pago</td>
+        </tr>
+        <tr>
+            <td>mespagando</td>
+            <td>VARCHAR(20)</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class='attr'>&nbsp;</td>
+            <td>NULL</td>
+            <td>Almacena el mes de pago</td>
+        </tr>
+        <tr>
+            <td>aniopagando</td>
+            <td>VARCHAR(30)</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class='attr'>&nbsp;</td>
+            <td>NULL</td>
+            <td>Almacena el año de pago</td>
+        </tr>
+        <tr>
+            <td>cliente_rutcliente</td>
+            <td>INT</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class='attr'>&nbsp;</td>
+            <td></td>
+            <td>Almacena <b><u>cliente_rutcliente</u></b> <b>FK</b>  que hace referencia a la tabla <b>cliente></b></td>
+        </tr>
+        <table id='profesional'>
+        <caption>Tabla : profesional</caption>
+        <tr><td colspan='11'></td></tr>
+        <tr>
+            <th>Column name</th>
+            <th>DataType</th>
+            <th><abbr title='Primary Key'>PK</abbr></th>
+            <th><abbr title='Not Null'>NN</abbr></th>
+            <th><abbr title='Unique'>UQ</abbr></th>
+            <th><abbr title='Binary'>BIN</abbr></th>
+            <th><abbr title='Unsigned'>UN</abbr></th>
+            <th><abbr title='Zero Fill'>ZF</abbr></th>
+            <th><abbr title='Auto Increment'>AI</abbr></th>
+            <th>Default</th>
+            <th>Comment</th>
+        </tr>
+        <tr>
+            <td>idprofesional</td>
+            <td>INT</td>
+            <td>&#10004;</td>
+            <td>&#10004;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&#10004;</td>
+            <td></td>
+            <td>Almacena <b><u>idprofesional</u></b> que es una clave autoincrementable</td>
+        </tr>
+        <tr>
+            <td>rutprofesional</td>
+            <td>INT</td>
+            <td>&nbsp;</td>
+            <td>&#10004;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class='attr'>&nbsp;</td>
+            <td></td>
+            <td>Almacena el rut del profesional</td>
+        </tr>
+        <tr>
+            <td>tituloProf</td>
+            <td>VARCHAR(100)</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class='attr'>&nbsp;</td>
+            <td>NULL</td>
+            <td>Almacena el título universitario del profesional</td>
+        </tr>
+        <tr>
+            <td>nombreproyecto</td>
+            <td>VARCHAR(50)</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class='attr'>&nbsp;</td>
+            <td>NULL</td>
+            <td>Almacena el nombre de proyecto que esta involucrado</td>
+        </tr>
+        <tr>
+            <td>telefono</td>
+            <td>VARCHAR(20)</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class='attr'>&nbsp;</td>
+            <td>NULL</td>
+            <td>Almacena el teléfono del profesional</td>
+        </tr>
+        <table id='usuario'>
+        <caption>Tabla : usuario</caption>
+        <tr><td colspan='11'></td></tr>
+        <tr>
+            <th>Column name</th>
+            <th>DataType</th>
+            <th><abbr title='Primary Key'>PK</abbr></th>
+            <th><abbr title='Not Null'>NN</abbr></th>
+            <th><abbr title='Unique'>UQ</abbr></th>
+            <th><abbr title='Binary'>BIN</abbr></th>
+            <th><abbr title='Unsigned'>UN</abbr></th>
+            <th><abbr title='Zero Fill'>ZF</abbr></th>
+            <th><abbr title='Auto Increment'>AI</abbr></th>
+            <th>Default</th>
+            <th>Comment</th>
+        </tr>
+        <tr>
+            <td>idusuario</td>
+            <td>INT</td>
+            <td>&#10004;</td>
+            <td>&#10004;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&#10004;</td>
+            <td></td>
+            <td>Almacena <b><u>idusuario</u></b> que es clave primaria autoincrementable</td>
+        </tr>
+        <tr>
+            <td>usunombre</td>
+            <td>VARCHAR(100)</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class='attr'>&nbsp;</td>
+            <td>NULL</td>
+            <td>Almacena  el nombre del usuario</td>
+        </tr>
+        <tr>
+            <td>usuapellidos</td>
+            <td>VARCHAR(50)</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class='attr'>&nbsp;</td>
+            <td>NULL</td>
+            <td>Almacena el apellido del usuario</td>
+        </tr>
+        <tr>
+            <td>usufechanac</td>
+            <td>DATE</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class='attr'>&nbsp;</td>
+            <td>NULL</td>
+            <td>Almacena la fecha de nacimiento del usuario</td>
+        </tr>
+        <tr>
+            <td>cliente_rutcliente</td>
+            <td>INT</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class='attr'>&nbsp;</td>
+            <td></td>
+            <td>Almacena <b><u>cliente_rutcliente</u></b> es clave principal y autoincrementable</td>
+        </tr>
+        <tr>
+            <td>Administrativo_id</td>
+            <td>INT</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class='attr'>&nbsp;</td>
+            <td></td>
+            <td>Almacena <b><u>Aministrativo_id</u></b> <b>FK</b>  es clave foránea que hace referencia a la tabla administrativo</td>
+        </tr>
+        <tr>
+            <td>profesional_id</td>
+            <td>INT</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class='attr'>&nbsp;</td>
+            <td></td>
+            <td>Almacena <b><u>profesional_id</u></b> es clave foránea que hace referencia a la tabla <b>profesional</b></td>
+        </tr>
+        <table id='visita'>
+        <caption>Tabla : visita</caption>
+        <tr><td colspan='11'></td></tr>
+        <tr>
+            <th>Column name</th>
+            <th>DataType</th>
+            <th><abbr title='Primary Key'>PK</abbr></th>
+            <th><abbr title='Not Null'>NN</abbr></th>
+            <th><abbr title='Unique'>UQ</abbr></th>
+            <th><abbr title='Binary'>BIN</abbr></th>
+            <th><abbr title='Unsigned'>UN</abbr></th>
+            <th><abbr title='Zero Fill'>ZF</abbr></th>
+            <th><abbr title='Auto Increment'>AI</abbr></th>
+            <th>Default</th>
+            <th>Comment</th>
+        </tr>
+        <tr>
+            <td>idvisita</td>
+            <td>INT</td>
+            <td>&#10004;</td>
+            <td>&#10004;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&#10004;</td>
+            <td></td>
+            <td>Almacena <b><u>idvisita</u></b> que es clave principal autoincrementable</td>
+        </tr>
+        <tr>
+            <td>visfecha</td>
+            <td>DATE</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class='attr'>&nbsp;</td>
+            <td>NULL</td>
+            <td>Almacena la fecha de la visita</td>
+        </tr>
+        <tr>
+            <td>vishora</td>
+            <td>TIME</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class='attr'>&nbsp;</td>
+            <td>NULL</td>
+            <td>Almacena la hora de la visita</td>
+        </tr>
+        <tr>
+            <td>vislugar</td>
+            <td>VARCHAR(50)</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class='attr'>&nbsp;</td>
+            <td>NULL</td>
+            <td>Almacena el lugar de la visita</td>
+        </tr>
+        <tr>
+            <td>viscomentario</td>
+            <td>VARCHAR(250)</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class='attr'>&nbsp;</td>
+            <td>NULL</td>
+            <td>Almacena el comentario de la visita</td>
+        </tr>
+        <tr>
+            <td>cliente_rutcliente</td>
+            <td>INT</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class='attr'>&nbsp;</td>
+            <td></td>
+            <td>Almacena <b><u>cliente_rutcliente</u></b><b>FK</b> la clave foránea que hace referencia a la tabla <b>clientes</b> </td>
+        </tr>
+        </table>
+</div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+</body>
+</html>
